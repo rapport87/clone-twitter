@@ -4,6 +4,7 @@ import FormButton from "@/components/button";
 import FormInput from "@/components/input";
 import { useFormState } from "react-dom";
 import { logIn } from "@/app/lib/actions";
+import Link from "next/link";
 // import { PASSWORD_MIN_LENGTH } from "@/lib/constants";
 
 export default function LogIn() {
@@ -32,6 +33,13 @@ export default function LogIn() {
         />
         <FormButton text="Log in" />
       </form>
+      <div className="flex flex-col items-center gap-3 w-full">
+        <span>아직 계정이 없다면</span>
+        <Link href="/create-account" className="primary-btn text-lg py-2.5">
+          계정 생성하기
+        </Link>
+      </div>      
     </div>
+    
   );
 }

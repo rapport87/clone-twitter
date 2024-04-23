@@ -5,6 +5,7 @@ import Input from "@/components/input";
 // import SocialLogin from "@/components/social-login";
 import { useFormState } from "react-dom";
 import { createAccount } from "@/app/lib/actions";
+import Link from "next/link";
 
 export default function CreateAccount() {
   const [state, dispatch] = useFormState(createAccount, null);
@@ -49,7 +50,12 @@ export default function CreateAccount() {
         />        
         <Button text="Create account" />
       </form>
-      {/* <SocialLogin /> */}
+      <div className="flex flex-col items-center gap-3 w-full">
+        <span>이미 계정이 있다면</span>
+        <Link href="/log-in" className="primary-btn text-lg py-2.5">
+          로그인
+        </Link>
+      </div>
     </div>
   );
 }
