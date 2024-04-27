@@ -1,8 +1,8 @@
 "use server";
 import bcrypt from "bcrypt";
 import { z } from "zod";
-import db from "@/app/lib/db";
-import getSession from "@/app/lib/session";
+import db from "@/lib/db";
+import getSession from "@/lib/session";
 import { redirect } from "next/navigation";
 
 const checkPasswords = ({

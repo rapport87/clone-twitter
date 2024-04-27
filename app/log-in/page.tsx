@@ -3,7 +3,7 @@
 import FormButton from "@/components/button";
 import FormInput from "@/components/input";
 import { useFormState } from "react-dom";
-import { logIn } from "@/app/lib/actions";
+import { logIn } from "@/lib/actions";
 import Link from "next/link";
 // import { PASSWORD_MIN_LENGTH } from "@/lib/constants";
 

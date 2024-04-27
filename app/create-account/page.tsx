@@ -4,7 +4,7 @@ import Button from "@/components/button";
 import Input from "@/components/input";
 // import SocialLogin from "@/components/social-login";
 import { useFormState } from "react-dom";
-import { createAccount } from "@/app/lib/actions";
+import { createAccount } from "@/lib/actions";
 import Link from "next/link";
 
 export default function CreateAccount() {
