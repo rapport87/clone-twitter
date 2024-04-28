@@ -2,6 +2,7 @@
 
 import { cls } from "@/lib/util";
 import { useRouter } from "next/navigation";
+import LikeDisplay from "@/components/liketoggle";
 
 interface TweetListviewProps {
   content: string;
@@ -19,7 +20,7 @@ export default function TweetListview({
   likeCount,
   tweetId,
   isLike,
-}: TweetListviewProps) {
+}: TweetListviewProps) {``
   const router = useRouter();
 
   const handlePostClick = () => {
@@ -28,10 +29,7 @@ export default function TweetListview({
 
   return (
     <div
-      className={cls(
-        "flex min-h-[200px] w-[520px] select-none flex-col rounded-xl p-6",
-        "border-2 border-neutral-200 shadow-[0_3px_10px_rgb(0,0,0,0.2)]",
-      )}
+      className="flex w-[350px] select-none flex-col rounded-xl p-4 border-2"
       onClick={handlePostClick}
     >
       <div className="flex w-full items-center px-1">
@@ -42,6 +40,16 @@ export default function TweetListview({
       <span className="flex-1 whitespace-pre-wrap break-words px-1 font-light">
         {content}
       </span>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center px-1">
+          <LikeDisplay
+            initLikeCount={likeCount}
+            tweetId={tweetId}
+            isLike={isLike}
+          />
+          <span className="mx-1 font-medium">·</span>
+        </div>
+      </div>      
     </div>
   );
 }
